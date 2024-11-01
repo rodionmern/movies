@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    height: 500px;
+    height: 450px;
     width: min-content;
     border-radius: 2.5px;
     background-color: #222222;
@@ -25,5 +25,5 @@
 
 .movie-poster {
     height: auto;
-    width: auto;
+    width: 233px;
 }

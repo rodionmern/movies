@@ -11,19 +11,20 @@ const MoviesList = () => {
 
     useEffect(() => {
     const getMovies = async () => {
-        const movies = await axios.get("https://yts.mx/api/v2/list_movies.json");
-        setMovies(movies.data.data.movies)
+        const movies = await axios.get("https://api.themoviedb.org/3/discover/movie?api_key=54880bc8207ac162252930d905c536c8&language=ru-RU");
+        console.log(movies)
+        setMovies(movies.data.results)
     }
     getMovies()
     }, [])
 
     return(
         <>
-            <h2 className="movies-list-title">List of movies:</h2>
+            <h2 className="movies-list-title">Список фильмов:</h2>
             <div className="movies-list">
             {
                 movies.map(movie => (
-                <MovieItem key={movie.id} title={movie.title_long} genres={movie.genres} rating={movie.rating} poster={movie.medium_cover_image} />
+                <MovieItem key={movie.id} title={movie.title} date={movie.release_date} rating={movie.vote_average} poster={movie.poster_path} />
                 ))
             }
             </div>
