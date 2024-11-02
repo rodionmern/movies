@@ -11,9 +11,9 @@ const MoviesList = () => {
 
     useEffect(() => {
     const getMovies = async () => {
-        const response = await axios.get("https://kinobd.xyz/api/films");
+        const response = await axios.get("https://api.kinopoisk.dev/v1.4/movie?token=EWBPDG5-EFKMJ7N-PZ2Y4YM-Z6A6PYY&rating.kp=8-9&page=1&limit=5");
         console.log(response)
-        setMovies(response.data.data)
+        setMovies(response.data.docs)
     }
     getMovies()
     }, [])
@@ -23,7 +23,7 @@ const MoviesList = () => {
             <div className="movies-list">
             {
                 movies.map(movie => (
-                <MovieItem key={movie.id} id={movie.id} title={movie.name_russian} rating={movie.rating_kp} poster={movie.small_poster} />
+                <MovieItem key={movie.id} id={movie.id} title={movie.name} rating={movie.rating.kp} poster={movie.poster.url} />
                 ))
             }
             </div>
