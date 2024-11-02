@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    height: 450px;
+    height: 425px;
     width: min-content;
     border-radius: 2.5px;
     background-color: #222222;
@@ -15,7 +15,7 @@
 .movie-rating {
     height: auto;
     width: min-content;
-    background-color: #111;
+    background-color: #101010;
     padding: 5px;
 }
 

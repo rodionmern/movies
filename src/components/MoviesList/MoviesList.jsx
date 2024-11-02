@@ -20,11 +20,10 @@ const MoviesList = () => {
 
     return(
         <>
-            <h2 className="movies-list-title">Список фильмов:</h2>
             <div className="movies-list">
             {
                 movies.map(movie => (
-                <MovieItem key={movie.id} title={movie.title} date={movie.release_date} rating={movie.vote_average} poster={movie.poster_path} />
+                <MovieItem key={movie.id} id={movie.id} title={movie.title} date={movie.release_date} rating={movie.vote_average} poster={movie.poster_path} />
                 ))
             }
             </div>

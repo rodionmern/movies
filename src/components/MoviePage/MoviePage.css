@@ -1,0 +1,29 @@
+.movie-page {
+    display: flex;
+    justify-content: center;
+    background-color: #222;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.movie-page-poster {
+    height: 400px;
+    width: auto;
+}
+
+.movie-page-details {
+    margin-left: 10px;
+}
+
+.movie-page-rating {
+    height: auto;
+    width: min-content;
+    background-color: #101010;
+    padding: 5px;
+}
+
+.movie-page-other-details {
+    list-style-type: none;
+    margin: 20px;
+}
