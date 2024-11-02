@@ -9,8 +9,8 @@ function App() {
     <>
     <Header />
     <Routes>
-      <Route path="/" element={<MoviesList />} />
-      <Route path="/page/:id" element={<MoviePage />} />
+      <Route path="/movies" element={<MoviesList />} />
+      <Route path="/movies/page/:id" element={<MoviePage />} />
     </Routes>
     </>
   )

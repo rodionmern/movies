@@ -12,7 +12,7 @@ const MoviePage = () => {
     useEffect(() =>
     {
         const getDetails = async () => {
-            const movieDetails = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=54880bc8207ac162252930d905c536c8&language=ru-RU`)
+            const movieDetails = await axios.get(`https://kinobd.xyz/api/films/${id}`)
             console.log(movieDetails.data)
             setMovie(movieDetails.data)
         }
@@ -24,16 +24,19 @@ const MoviePage = () => {
     return (
         <>
         <div className="movie-page">
-            <img src={`https://image.tmdb.org/t/p/w600_and_h900_bestv2${movie.poster_path}`} alt="Постер фильма" className="movie-page-poster" />
+            <img src={movie.big_poster} alt="Постер фильма" className="movie-page-poster" />
             <div className="movie-page-details">
-                <h1>{movie.title} ({movie.release_date/*.slice(0, 4)*/})</h1>
-                <p><b className="movie-page-rating">{movie.vote_average}/10</b> <a href={`https://www.imdb.com/title/${movie.imdb_id}`}>IMDB</a></p>
-                <p>{movie.overview}</p>
+                <h1>{movie.name_russian} ({movie.year})</h1>
+                <p><b className="movie-page-rating">{movie.rating_imdb}/10</b> <a href={`https://www.imdb.com/title/${movie.imdb_id}`}>IMDB</a></p>
+                <p>{movie.description}</p>
                 <ul className="movie-page-other-details">
-                    <li>Исходное название: {movie.original_title}</li>
-                    <li>Бюджет фильма: {movie.budget}$</li>
-                    <li>Сборы фильма: {movie.revenue}$</li>
+                    <li>Исходное название: {movie.name_original}</li>
+                    <li>Бюджет фильма: {movie.budget}</li>
                 </ul>
+                <h4>Трейлер:</h4>
+                <iframe width="560" height="315"
+                    src={movie.trailer}>
+                </iframe>
             </div>
         </div>
         </>

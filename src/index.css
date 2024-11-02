@@ -6,6 +6,11 @@ body {
     color: #ffffff;
 }
 
+iframe {
+    border: none;
+    border-radius: 10px;
+}
+
 a {
     color: #f2f2f2;
     text-decoration: none;

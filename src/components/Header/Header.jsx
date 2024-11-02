@@ -6,8 +6,8 @@ import './Header.css'
 const Header = () => {
     return (
         <header>
-            <h2>ExampleName</h2>
-            <Link to="/" replace={true}>Главная</Link>
+            <h2>Movie Searcher</h2>
+            <Link to="/movies/" replace={true}>Главная</Link>
         </header>
     )
 }
